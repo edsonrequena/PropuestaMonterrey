@@ -357,22 +357,279 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
         
-        @media (max-width: 768px) {
-            .arquitectura-container {
+        /* Responsivo para tablets y móviles */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: 30px 20px;
+                margin: 0 auto 30px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.6em;
+            }
+            
+            .roi-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .roi-box {
+                min-width: 250px;
+                margin: 10px 0;
+            }
+            
+            .proceso-flow {
                 flex-direction: column;
             }
             
-            .timeline-item {
-                width: 90%;
-                margin-left: 5% !important;
+            .proceso-step {
+                margin: 10px 0;
+                min-width: 200px;
             }
             
-            .timeline-item::before {
-                left: -30px !important;
+            .proceso-step::after {
+                content: '↓';
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+            
+            .proceso-step:last-child::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .slide {
+                padding: 20px 15px;
+                margin: 0 auto 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+                margin-bottom: 15px;
+            }
+            
+            .arquitectura-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .agente-central, .sap-box {
+                min-width: auto;
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .sistema-box {
+                min-width: 100px;
+                padding: 15px;
+                margin: 5px;
+            }
+            
+            .conexion {
+                width: 3px;
+                height: 30px;
+                transform: rotate(90deg);
+            }
+            
+            .timeline {
+                margin: 20px 0;
             }
             
             .timeline::before {
                 left: 20px;
+            }
+            
+            .timeline-item {
+                width: calc(100% - 40px);
+                margin-left: 40px !important;
+                padding: 15px;
+            }
+            
+            .timeline-item::before {
+                left: -30px !important;
+                width: 15px;
+                height: 15px;
+            }
+            
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .beneficio-card {
+                padding: 20px;
+            }
+            
+            .grafico-barras {
+                padding: 15px;
+            }
+            
+            .barra {
+                flex-direction: column;
+                align-items: flex-start;
+                margin: 10px 0;
+            }
+            
+            .barra-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .barra-fill {
+                margin: 5px 0;
+                max-width: 100%;
+            }
+            
+            .matriz-impacto {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .matriz-header {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .matriz-cell {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .roi-box {
+                min-width: auto;
+                width: 100%;
+                margin: 10px 0;
+                padding: 20px;
+            }
+            
+            .roi-number {
+                font-size: 2.5em;
+            }
+            
+            .agente-detalle {
+                padding: 20px;
+            }
+            
+            .agente-icon {
+                font-size: 2.5em;
+            }
+            
+            .cta-section {
+                padding: 30px 20px;
+            }
+            
+            .cta-button {
+                padding: 15px 25px;
+                font-size: 1.1em;
+                margin: 10px 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slide {
+                padding: 15px 10px;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            .sistema-box {
+                min-width: 80px;
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .agente-central, .sap-box {
+                padding: 15px;
+                font-size: 1em;
+            }
+            
+            .roi-number {
+                font-size: 2em;
+            }
+            
+            .agente-icon {
+                font-size: 2em;
+            }
+            
+            .matriz-header, .matriz-cell {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+            
+            .timeline-item {
+                padding: 10px;
+            }
+            
+            .timeline-item h3 {
+                font-size: 1.1em;
+            }
+            
+            .beneficio-card {
+                padding: 15px;
+            }
+            
+            .beneficio-card h4 {
+                font-size: 1.1em;
+            }
+            
+            .grafico-barras h3 {
+                font-size: 1.1em;
+            }
+            
+            .barra-label {
+                font-size: 0.9em;
+            }
+            
+            .proceso-step {
+                padding: 15px;
+                min-width: auto;
+            }
+            
+            .proceso-step h4 {
+                font-size: 1em;
+            }
+        }
+
+        /* Mejoras específicas para dispositivos táctiles */
+        @media (hover: none) and (pointer: coarse) {
+            .beneficio-card:hover {
+                transform: none;
+            }
+            
+            .sistema-box:hover {
+                transform: none;
+            }
+            
+            .cta-button:hover {
+                transform: none;
+            }
+            
+            .beneficio-card, .sistema-box, .cta-button {
+                transition: none;
             }
         }
     </style>
